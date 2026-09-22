@@ -1,0 +1,11 @@
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: todo-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - todo-mongo-data:/data/db
+
+volumes:
+  todo-mongo-data:
