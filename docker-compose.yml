@@ -7,5 +7,21 @@ services:
     volumes:
       - todo-mongo-data:/data/db
 
+  backend: 
+    build: ./backend
+    container_name: back-container
+    ports: 
+     - "5000:5000" 
+    depends_on:
+      - mongodb
+
+  frontend:
+    build: ./frontend 
+    container_name: front-container
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend   
+
 volumes:
   todo-mongo-data:
