@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose
-    .connect("mongodb://localhost:27017/todoapp")
+    .connect("mongodb://mongodb:27017/todoapp")
     .then(() => {
         console.log("MongoDB connected");
     })
